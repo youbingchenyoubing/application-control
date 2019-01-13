@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active:
+      dev
+  application:
+    name: application-trace
+  cloud:
+    config:
+      profile: ${spring.profiles.active}
+      label: master
+      username: just-do-it
+      password: just-do-it@everything.com
+      discovery:
+        enabled: true
+        service-id: application-config

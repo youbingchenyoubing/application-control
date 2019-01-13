@@ -1,0 +1,59 @@
+spring:
+  profiles:
+    active:
+      dev
+  application:
+    name: application-monitor
+  security:
+    user:
+      name: just-do-it
+      password: just-do-it@everything.com
+  cloud:
+    config:
+      fail-fast: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: just-do-it
+      password: just-do-it@everything.com
+      discovery:
+        enabled: true
+        service-id: application-config
+
+center:
+  username: just-do-it
+  password: just-do-it-for-everything # to do encrypt
+
+---
+spring:
+  profiles:
+    dev
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://${center.username}:${center.password}@localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
+---
+spring:
+  profile:
+    docker # prod
+
+eureka:
+  client:
+    serviceUrl:
+        defaultZone: http://${center.username}:${center.password}@application-center:8761/eureka/
+  instance:
+    instance-id:  ${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}

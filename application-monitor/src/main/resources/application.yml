@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: application-monitor
+
+  mail:
+    host: smtp.163.com
+    password: justdoit163
+    username: news_spider@163.com
+  boot:
+    admin:
+      notify:
+        mail:
+         - youbingchenyoubing@163.com
+
+
+server:
+  port: 8763
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+

@@ -1,0 +1,6 @@
+[老A](https://gitee.com/minull/ace-security/tree/master/ace-control)
+[pigg开源较好的](https://gitee.com/log4j/pig/tree/master/pig-visual)
+[paascloud-master](https://github.com/paascloud/paascloud-master/tree/master/paascloud-monitor)
+[牛逼](https://mp.weixin.qq.com/s/F1PISCsKwhVAyYeLGvmyog)
+[官方文档](https://codecentric.github.io/spring-boot-admin/current/#_securing_spring_boot_admin_server)
+[Spring Boot Admin 2.0开箱体验](https://juejin.im/post/5b4e8bb5e51d45195c073479)

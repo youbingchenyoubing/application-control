@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.common.control</groupId>
+    <artifactId>common-control</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <properties>
+        <docker.plugin.version>1.2.0</docker.plugin.version>
+        <docker.image.prefix>registry.cn-hangzhou.aliyuncs.com/just-do-it</docker.image.prefix>
+    </properties>
+    <modules>
+        <module>application-monitor</module>
+        <module>application-trace</module>
+    </modules>
+</project>
