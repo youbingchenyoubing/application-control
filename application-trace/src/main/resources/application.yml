@@ -14,34 +14,3 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-center:
-  username: just-do-it
-  password: just-do-it-for-everything # to do encrypt
-
----
-spring:
-  profiles:
-    dev
-eureka:
-  client:
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://${center.username}:${center.password}@localhost:8761/eureka/
-  instance:
-    instance-id: ${spring.application.name}:${server.port}
-    leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /actuator/health
-
----
-spring:
-  profile:
-    docker # prod
-
-eureka:
-  client:
-    service-url:
-      defaultZone:http://${center.username}:${center.password}@application-center:8761/eureka/
-  instance:
-    instance-id:  ${spring.application.name}:${server.port}
-    leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /actuator/health
